@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Cambiar por el dominio real al publicar
+Sitemap: https://www.repuestospilar.com.ar/sitemap.xml

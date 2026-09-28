@@ -1,0 +1,91 @@
+<section class="page-hero">
+  <div class="container">
+    <app-breadcrumbs [items]="migas" />
+    <h1>Contacto y ubicación</h1>
+    <p class="lead">
+      Escribinos, llamanos o pasá por el local. Te respondemos con stock y precio en el día.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <h2>Datos de contacto</h2>
+      <address class="contact-list">
+        <div>
+          <span class="contact-label">Dirección</span>
+          <strong>{{ site.address.street }}</strong><br />
+          {{ site.address.neighborhood }}, {{ site.address.city }}<br />
+          {{ site.address.country }}
+        </div>
+        <div>
+          <span class="contact-label">Teléfono</span>
+          <a [href]="'tel:' + site.phone.tel">{{ site.phone.display }}</a>
+        </div>
+        <div>
+          <span class="contact-label">WhatsApp</span>
+          <a [href]="whatsapp" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
+        </div>
+        <div>
+          <span class="contact-label">Email</span>
+          <a [href]="'mailto:' + site.email">{{ site.email }}</a>
+        </div>
+      </address>
+
+      <h2>Horarios de atención</h2>
+      <table class="hours-table">
+        <caption class="visually-hidden">Horarios de atención de {{ site.name }}</caption>
+        <tbody>
+          @for (h of site.hours; track h.label) {
+            <tr>
+              <th scope="row">{{ h.label }}</th>
+              <td>{{ h.text }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+
+      <a class="btn btn-outline" [href]="mapsUrl" target="_blank" rel="noopener">Ver en Google Maps</a>
+    </div>
+
+    <form class="contact-form" [formGroup]="form" (ngSubmit)="enviar()" novalidate>
+      <h2>Consultanos por un repuesto</h2>
+      <p class="muted">Completá los datos y te abrimos WhatsApp con tu consulta lista para enviar.</p>
+
+      <div class="field">
+        <label for="nombre">Nombre y apellido</label>
+        <input id="nombre" type="text" formControlName="nombre" autocomplete="name" [attr.aria-invalid]="invalido('nombre')" />
+        @if (invalido('nombre')) {
+          <span class="field-error" role="alert">Ingresá tu nombre.</span>
+        }
+      </div>
+
+      <div class="field">
+        <label for="telefono">Teléfono (opcional)</label>
+        <input id="telefono" type="tel" formControlName="telefono" autocomplete="tel" />
+      </div>
+
+      <div class="field">
+        <label for="vehiculo">Marca, modelo y año de tu auto</label>
+        <input id="vehiculo" type="text" formControlName="vehiculo" placeholder="Ej.: Toyota Hilux 2018 2.8 TDI" [attr.aria-invalid]="invalido('vehiculo')" />
+        @if (invalido('vehiculo')) {
+          <span class="field-error" role="alert">Indicanos tu vehículo para buscar el repuesto correcto.</span>
+        }
+      </div>
+
+      <div class="field">
+        <label for="mensaje">¿Qué repuesto necesitás?</label>
+        <textarea id="mensaje" rows="4" formControlName="mensaje" [attr.aria-invalid]="invalido('mensaje')"></textarea>
+        @if (invalido('mensaje')) {
+          <span class="field-error" role="alert">Contanos qué estás buscando.</span>
+        }
+      </div>
+
+      <button class="btn btn-whatsapp" type="submit">Enviar consulta por WhatsApp</button>
+      @if (enviado()) {
+        <p class="form-ok" role="status">¡Listo! Se abrió WhatsApp con tu consulta. Si no se abrió, escribinos directamente.</p>
+      }
+    </form>
+  </div>
+</section>

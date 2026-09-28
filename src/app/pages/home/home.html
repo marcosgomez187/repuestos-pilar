@@ -1,0 +1,198 @@
+<section class="hero" aria-labelledby="titulo-inicio">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Autopartes en {{ site.address.city }}, {{ site.address.region }}</p>
+      <h1 id="titulo-inicio">Repuestos originales Toyota y Lexus en {{ site.address.city }}</h1>
+      <p class="lead">
+        Especialistas en repuestos originales: inyección, sensores, encendido y correas para tu Toyota o Lexus.
+        Te confirmamos el código exacto de la pieza, con garantía y envíos a todo el país.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" routerLink="/productos">Ver catálogo</a>
+        <a class="btn btn-outline-light" [href]="whatsapp" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      </div>
+      <ul class="hero-points">
+        <li>Stock permanente de las piezas más buscadas</li>
+        <li>Respuesta el mismo día</li>
+        <li>Garantía en todos los repuestos</li>
+      </ul>
+    </div>
+    <div class="hero-media">
+      <img
+        src="/images/hero.svg"
+        width="1200"
+        height="800"
+        fetchpriority="high"
+        decoding="async"
+        alt="Auto rojo de perfil junto a un engranaje: repuestos y autopartes en Pilar"
+      />
+    </div>
+  </div>
+</section>
+
+<section class="benefits" aria-label="Por qué comprar en RepuestosPilar">
+  <div class="container benefits-grid">
+    <article class="benefit">
+      <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.500-3.200 8-8 9-4.800-1-8-4.500-8-9V6l8-3z"/><path d="M8.500 12l2.500 2.500 4.500-5"/></svg>
+      <h2>Garantía real</h2>
+      <p>Todos los repuestos cubiertos por defectos de fabricación.</p>
+    </article>
+    <article class="benefit">
+      <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v9H3z"/><path d="M14 9h4l3 3v3h-7"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+      <h2>Envíos a todo el país</h2>
+      <p>Por correo y transporte, y con moto en {{ site.address.city }} y zonas cercanas.</p>
+    </article>
+    <article class="benefit">
+      <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0116 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.500"/><rect x="17" y="13" width="4" height="6" rx="1.500"/><path d="M20 19c0 1.500-2 2.500-5 2.500"/></svg>
+      <h2>Asesoramiento técnico</h2>
+      <p>Verificamos la compatibilidad antes de que compres.</p>
+    </article>
+    <article class="benefit">
+      <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4h8l10 10-8 8L3 12z"/><circle cx="7.500" cy="8.500" r="1.500"/></svg>
+      <h2>Calidad original</h2>
+      <p>Repuestos originales, con la calidad y el ajuste que define el fabricante.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="titulo-categorias">
+  <div class="container">
+    <header class="section-head">
+      <h2 id="titulo-categorias">Repuestos para autos que tenemos en stock</h2>
+      <p>Elegí una categoría y consultá disponibilidad para tu marca y modelo.</p>
+    </header>
+    <div class="card-grid">
+      @for (c of categorias; track c.slug) {
+        <article class="card">
+          @if (imagenCategoria(c.slug); as destacado) {
+            <img [src]="destacado.imagen" width="600" height="600" loading="lazy" decoding="async" [alt]="destacado.alt" />
+          }
+          <div class="card-body">
+            <h3><a class="card-link" [routerLink]="['/productos', c.slug]">{{ c.nombre }}</a></h3>
+            <p>{{ c.resumen }}</p>
+            <span class="card-more" aria-hidden="true">Ver {{ c.nombre.toLowerCase() }} →</span>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" aria-labelledby="titulo-quienes">
+  <div class="container split">
+    <div class="split-media">
+      <img
+        src="/images/nosotros.svg"
+        width="900"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        alt="Frente del local de RepuestosPilar con toldo rojo y blanco"
+      />
+    </div>
+    <div class="split-copy">
+      <h2 id="titulo-quienes">Quiénes somos</h2>
+      <p>
+        {{ site.name }} es un comercio de autopartes ubicado en {{ site.address.neighborhood }}, {{ site.address.city }}.
+        Atendemos a particulares y talleres con un principio simple: darte el repuesto correcto, al precio justo y con la
+        información que necesitás para elegir bien.
+      </p>
+      <ul class="tick-list">
+        <li>Atención personalizada en el local y por WhatsApp</li>
+        <li>Buscamos el repuesto según marca, modelo y año de tu auto</li>
+        <li>Repuestos originales, con la calidad del fabricante</li>
+      </ul>
+      <a class="btn btn-primary" routerLink="/nosotros">Conocé más sobre nosotros</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="titulo-marcas">
+  <div class="container">
+    <header class="section-head">
+      <h2 id="titulo-marcas">Marcas de las piezas que trabajamos</h2>
+      <p>Repuestos originales Toyota y Lexus, y componentes de los fabricantes que los proveen de fábrica.</p>
+    </header>
+    <ul class="chips">
+      @for (marca of marcas; track marca) {
+        <li>{{ marca }}</li>
+      }
+    </ul>
+  </div>
+</section>
+
+<section class="section section-alt" aria-labelledby="titulo-pasos">
+  <div class="container">
+    <header class="section-head">
+      <h2 id="titulo-pasos">Cómo comprar tu repuesto</h2>
+    </header>
+    <ol class="steps">
+      <li>
+        <h3>Contanos sobre tu auto</h3>
+        <p>Marca, modelo, año y motorización. Con la cédula verde o el número de chasis es todavía más rápido.</p>
+      </li>
+      <li>
+        <h3>Confirmamos compatibilidad y precio</h3>
+        <p>Buscamos la referencia exacta y te ofrecemos las opciones disponibles en stock.</p>
+      </li>
+      <li>
+        <h3>Retirás o te lo enviamos</h3>
+        <p>Pasá por el local o recibí tu pedido en tu casa, en cualquier punto del país.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="titulo-ubicacion">
+  <div class="container split">
+    <div class="split-copy">
+      <h2 id="titulo-ubicacion">Dónde estamos</h2>
+      <address>
+        <strong>{{ site.legalName }}</strong><br />
+        {{ site.address.street }}<br />
+        {{ site.address.neighborhood }}, {{ site.address.city }}<br />
+        {{ site.address.country }}
+      </address>
+      <p>
+        Teléfono: <a [href]="'tel:' + site.phone.tel">{{ site.phone.display }}</a><br />
+        Email: <a [href]="'mailto:' + site.email">{{ site.email }}</a>
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" [href]="mapsUrl" target="_blank" rel="noopener">Cómo llegar</a>
+        <a class="btn btn-outline" routerLink="/contacto">Más formas de contacto</a>
+      </div>
+    </div>
+    <div class="split-copy">
+      <h3>Horarios de atención</h3>
+      <table class="hours-table">
+        <caption class="visually-hidden">Horarios de atención de {{ site.name }}</caption>
+        <tbody>
+          @for (h of site.hours; track h.label) {
+            <tr>
+              <th scope="row">{{ h.label }}</th>
+              <td>{{ h.text }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" aria-labelledby="titulo-faq">
+  <div class="container narrow">
+    <header class="section-head">
+      <h2 id="titulo-faq">Preguntas frecuentes</h2>
+    </header>
+    <div class="faq">
+      @for (p of preguntas; track p.pregunta) {
+        <details>
+          <summary>{{ p.pregunta }}</summary>
+          <p>{{ p.respuesta }}</p>
+        </details>
+      }
+    </div>
+  </div>
+</section>
+
+<app-cta-banner />

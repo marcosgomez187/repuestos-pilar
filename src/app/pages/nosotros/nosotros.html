@@ -1,0 +1,101 @@
+<section class="page-hero">
+  <div class="container">
+    <app-breadcrumbs [items]="migas" />
+    <h1>Quiénes somos: tu casa de repuestos en {{ site.address.city }}</h1>
+    <p class="lead">
+      Somos {{ site.name }}, una casa de repuestos y autopartes en {{ site.address.neighborhood }}, {{ site.address.city }}.
+      Trabajamos para que tu auto vuelva a andar como corresponde.
+    </p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="titulo-quienes">
+  <div class="container split">
+    <div class="split-copy">
+      <h2 id="titulo-quienes">Somos {{ site.name }}</h2>
+      <p>
+        {{ site.legalName }} es un comercio de autopartes ubicado en {{ site.address.street }}, {{ site.address.neighborhood }},
+        {{ site.address.city }}. Nuestro equipo te atiende de forma personal y te ayuda a encontrar el repuesto exacto para
+        tu vehículo.
+      </p>
+      <p>
+        Combinamos el trato de mostrador de siempre con herramientas simples: consultas y presupuestos por WhatsApp,
+        búsqueda por marca, modelo y año, y envíos a donde estés.
+      </p>
+      <p>
+        Nuestro trabajo no termina cuando te vendemos la pieza: nos aseguramos de que sea la correcta y de que
+        funcione bien.
+      </p>
+    </div>
+    <div class="split-media">
+      <img
+        src="/images/nosotros.svg"
+        width="900"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        alt="Fachada del local de RepuestosPilar en {{ site.address.city }}"
+      />
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" aria-labelledby="titulo-mision">
+  <div class="container">
+    <header class="section-head">
+      <h2 id="titulo-mision">Misión, visión y valores</h2>
+    </header>
+    <div class="card-grid three">
+      <article class="info-card">
+        <h3>Nuestra misión</h3>
+        <p>
+          Ofrecer el repuesto correcto, al precio justo y con asesoramiento honesto, para que cada cliente
+          circule seguro y sin sobresaltos.
+        </p>
+      </article>
+      <article class="info-card">
+        <h3>Nuestra visión</h3>
+        <p>
+          Ser el comercio de autopartes de referencia de {{ site.address.city }}, reconocido por la confianza,
+          la variedad y el trato cercano.
+        </p>
+      </article>
+      @for (v of valores; track v.titulo) {
+        <article class="info-card">
+          <h3>{{ v.titulo }}</h3>
+          <p>{{ v.texto }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" aria-labelledby="titulo-deposito">
+  <div class="container split">
+    <div class="split-media">
+      <img
+        src="/images/deposito.svg"
+        width="900"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        alt="Estanterías del depósito con cajas de repuestos, cubiertas y aceites"
+      />
+    </div>
+    <div class="split-copy">
+      <h2 id="titulo-deposito">Un depósito pensado para vos</h2>
+      <p>
+        Trabajamos para tener a mano los repuestos de mayor rotación y, si no tenemos el que necesitás, te ayudamos a
+        conseguirlo. Consultanos por WhatsApp y te respondemos con disponibilidad y precio.
+      </p>
+      <ul class="tick-list">
+        <li>Repuestos de las marcas más vendidas</li>
+        <li>Búsqueda por marca, modelo y año</li>
+        <li>Venta a particulares y talleres</li>
+      </ul>
+      <a class="btn btn-primary" routerLink="/productos">Ver el catálogo</a>
+    </div>
+  </div>
+</section>
+
+<app-cta-banner titulo="¿Hablamos? Te asesoramos sin compromiso" />

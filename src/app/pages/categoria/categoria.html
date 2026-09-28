@@ -1,0 +1,74 @@
+@if (categoria(); as c) {
+  <section class="page-hero">
+    <div class="container">
+      <app-breadcrumbs [items]="migas()" />
+      <h1>{{ c.h1 }}</h1>
+      <p class="lead">{{ c.resumen }}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      @for (parrafo of c.intro; track parrafo) {
+        <p>{{ parrafo }}</p>
+      }
+      <div class="btn-row">
+        <a class="btn btn-whatsapp" [href]="whatsapp()" target="_blank" rel="noopener">Consultar stock y precio</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="titulo-productos">
+    <div class="container">
+      <header class="section-head">
+        <h2 id="titulo-productos">{{ c.nombre }}: repuestos disponibles</h2>
+      </header>
+      <div class="producto-grid">
+        @for (p of productos(); track p.id) {
+          <article class="producto-card">
+            <img [src]="p.imagen" width="360" height="360" loading="lazy" decoding="async" [alt]="p.alt" />
+            <div class="producto-card-body">
+              <span class="producto-marca">{{ p.marca }}</span>
+              <h3>{{ p.nombre }}</h3>
+              <p class="producto-codigo">Código {{ p.codigo }}</p>
+              @if (p.compatibilidad) {
+                <p class="producto-compat">{{ p.compatibilidad }}</p>
+              }
+              <a class="btn btn-whatsapp btn-block" [href]="whatsappProducto(p)" target="_blank" rel="noopener">
+                Consultar por WhatsApp
+              </a>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="titulo-consejos">
+    <div class="container narrow">
+      <header class="section-head">
+        <h2 id="titulo-consejos">Consejos</h2>
+      </header>
+      <ul class="tick-list large">
+        @for (consejo of c.consejos; track consejo) {
+          <li>{{ consejo }}</li>
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="titulo-relacionadas">
+    <div class="container">
+      <header class="section-head">
+        <h2 id="titulo-relacionadas">Otras categorías de repuestos</h2>
+      </header>
+      <ul class="chips">
+        @for (r of relacionadas(); track r.slug) {
+          <li><a [routerLink]="['/productos', r.slug]">{{ r.nombre }}</a></li>
+        }
+      </ul>
+    </div>
+  </section>
+
+  <app-cta-banner />
+}

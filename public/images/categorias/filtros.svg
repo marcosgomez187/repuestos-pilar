@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="t">
+  <title id="t">Filtro de aceite y filtro de aire</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b2029"/><stop offset="1" stop-color="#33404f"/></linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d9720a"/><stop offset=".45" stop-color="#ffc24d"/><stop offset="1" stop-color="#d9720a"/></linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7d8794"/><stop offset=".4" stop-color="#f1f4f8"/><stop offset="1" stop-color="#7d8794"/></linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <circle cx="300" cy="200" r="170" fill="#fff" opacity=".04"/>
+
+  <!-- filtro de aceite -->
+  <rect x="122" y="120" width="164" height="182" rx="18" fill="url(#orange)"/>
+  <rect x="122" y="146" width="164" height="16" fill="#8a4a05" opacity=".35"/>
+  <rect x="122" y="168" width="164" height="6" fill="#8a4a05" opacity=".25"/>
+  <rect x="146" y="196" width="116" height="66" rx="8" fill="#fff" opacity=".95"/>
+  <rect x="146" y="196" width="116" height="16" rx="4" fill="#14181f"/>
+  <rect x="160" y="226" width="88" height="7" rx="3" fill="#b8bfca"/><rect x="160" y="242" width="60" height="7" rx="3" fill="#b8bfca"/>
+  <rect x="112" y="298" width="184" height="22" rx="5" fill="url(#metal)"/>
+  <rect x="150" y="320" width="108" height="12" rx="4" fill="#1b2028"/>
+
+  <!-- filtro de aire -->
+  <rect x="330" y="152" width="200" height="168" rx="10" fill="#f0e3c4"/>
+  <g stroke="#bfae82" stroke-width="3">
+    <path d="M346 164V308M360 164V308M374 164V308M388 164V308M402 164V308M416 164V308M430 164V308M444 164V308M458 164V308M472 164V308M486 164V308M500 164V308M514 164V308"/>
+  </g>
+  <rect x="322" y="140" width="216" height="18" rx="6" fill="#14181f"/>
+  <rect x="322" y="314" width="216" height="18" rx="6" fill="#14181f"/>
+  <rect x="330" y="152" width="200" height="8" fill="#fff" opacity=".18"/>
+</svg>

@@ -1,0 +1,111 @@
+<section class="page-hero">
+  <div class="container">
+    <app-breadcrumbs [items]="migas" />
+    <h1>Catálogo de repuestos originales Toyota y Lexus</h1>
+    <p class="lead">
+      Piezas originales, con el código de fábrica confirmado. Filtrá por categoría, por marca o buscá directamente
+      por el código de tu repuesto.
+    </p>
+  </div>
+</section>
+
+<section class="section" aria-label="Buscar repuestos">
+  <div class="container">
+    <div class="filter-bar">
+      <div class="filter-field filter-search">
+        <label for="buscar-repuesto">Buscar por nombre o código</label>
+        <input
+          id="buscar-repuesto"
+          type="search"
+          placeholder="Ej.: sensor de oxígeno, 23810-30100"
+          [value]="q() ?? ''"
+          (input)="onBuscar($event)"
+        />
+      </div>
+      <div class="filter-field">
+        <label for="filtro-categoria">Categoría</label>
+        <select id="filtro-categoria" [value]="categoria() ?? ''" (change)="onCategoria($event)">
+          <option value="">Todas</option>
+          @for (c of categorias; track c.slug) {
+            <option [value]="c.slug">{{ c.nombre }}</option>
+          }
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="filtro-marca">Marca</label>
+        <select id="filtro-marca" [value]="marca() ?? ''" (change)="onMarca($event)">
+          <option value="">Todas</option>
+          @for (m of marcasProducto; track m) {
+            <option [value]="m">{{ m }}</option>
+          }
+        </select>
+      </div>
+      @if (hayFiltros()) {
+        <button type="button" class="btn btn-outline filter-clear" (click)="limpiarFiltros()">Limpiar filtros</button>
+      }
+    </div>
+
+    <p class="filter-count" role="status">
+      @if (productos().length === 0) {
+        No encontramos repuestos con esos filtros. Consultanos, seguro te podemos ayudar.
+      } @else {
+        {{ productos().length }} {{ productos().length === 1 ? 'repuesto encontrado' : 'repuestos encontrados' }}
+      }
+    </p>
+
+    @if (productos().length > 0) {
+      <div class="producto-grid">
+        @for (p of productos(); track p.id) {
+          <article class="producto-card">
+            <img [src]="p.imagen" width="360" height="360" loading="lazy" decoding="async" [alt]="p.alt" />
+            <div class="producto-card-body">
+              <span class="producto-marca">{{ p.marca }}</span>
+              <h3>{{ p.nombre }}</h3>
+              <p class="producto-codigo">Código {{ p.codigo }}</p>
+              @if (p.compatibilidad) {
+                <p class="producto-compat">{{ p.compatibilidad }}</p>
+              }
+              <a class="btn btn-whatsapp btn-block" [href]="whatsappProducto(p)" target="_blank" rel="noopener">
+                Consultar por WhatsApp
+              </a>
+            </div>
+          </article>
+        }
+      </div>
+    } @else {
+      <div class="empty-state">
+        <p>No tenemos ese repuesto cargado en el catálogo todavía, pero puede que lo tengamos en stock.</p>
+        <a class="btn btn-whatsapp" [href]="whatsappSinResultados()" target="_blank" rel="noopener">
+          Consultar por WhatsApp
+        </a>
+      </div>
+    }
+  </div>
+</section>
+
+<section class="section section-alt" aria-labelledby="titulo-categorias">
+  <div class="container">
+    <header class="section-head">
+      <h2 id="titulo-categorias">Explorá por categoría</h2>
+      <p>Cada categoría tiene su propia página con más información y consejos.</p>
+    </header>
+    <div class="product-list">
+      @for (c of categorias; track c.slug; let par = $even) {
+        <article class="product-row" [class.reverse]="!par" [id]="c.slug">
+          @if (imagenCategoria(c.slug); as destacado) {
+            <div class="product-media">
+              <img [src]="destacado.imagen" width="600" height="600" loading="lazy" decoding="async" [alt]="destacado.alt" />
+            </div>
+          }
+          <div class="product-copy">
+            <h3>{{ c.nombre }}</h3>
+            <p>{{ c.resumen }}</p>
+            <a class="btn btn-primary" [routerLink]="['/productos', c.slug]">Ver {{ c.nombre.toLowerCase() }}</a>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<app-cta-banner />
