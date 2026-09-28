@@ -24,9 +24,9 @@ export class Home {
 
   constructor() {
     inject(SeoService).setPage({
-      title: 'Repuestos originales Toyota y Lexus en Pilar | RepuestosPilar',
+      title: 'Repuestos originales Toyota en Pilar | RepuestosPilar',
       description:
-        'Repuestos originales Toyota y Lexus en Pilar: inyección, sensores, encendido y correas. Asesoramiento personalizado, envíos a todo el país y garantía.',
+        'Repuestos originales Toyota en Pilar: inyección, sensores, encendido y correas. Asesoramiento personalizado, envíos a todo el país y garantía.',
       path: '/',
       jsonLd: [negocioSchema(), sitioWebSchema()],
     });

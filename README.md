@@ -35,7 +35,7 @@ Confirmá estos datos:
 - `src/app/core/site.config.ts` → dominio (`url`) y **horarios de atención** (son de ejemplo). Nombre, dirección, teléfono y email ya son los reales.
 - `public/robots.txt` y `public/sitemap.xml` → el dominio `https://www.repuestospilar.com.ar` es un ejemplo; cambialo por el real.
 - `src/app/data/catalog.ts` → categorías y preguntas frecuentes (envíos, garantía y medios de pago son texto de ejemplo: ajustalos a lo que realmente ofrecen).
-- `src/app/data/productos.ts` → el catálogo real de repuestos (20 productos con foto). Para agregar uno nuevo: sumá la foto en `public/images/productos/` y un objeto al array `PRODUCTOS` con `id`, `nombre`, `codigo`, `marca` (`'Toyota / Lexus'`, `'Denso'` o `'Bosch'`; para otra marca agregala también en `MARCAS_PRODUCTO`), `categoria` (el slug de una de las 4 categorías) e `imagen`/`alt`.
+- `src/app/data/productos.ts` → el catálogo real de repuestos (20 productos con foto). Para agregar uno nuevo: sumá la foto en `public/images/productos/` y un objeto al array `PRODUCTOS` con `id`, `nombre`, `codigo`, `marca` (`'Toyota'`, `'Denso'` o `'Bosch'`; para otra marca agregala también en `MARCAS_PRODUCTO`), `categoria` (el slug de una de las 4 categorías) e `imagen`/`alt`.
 - Imágenes de "Quiénes somos" e íconos de categoría (`public/images/*.svg`) son ilustraciones. Las fotos de productos en `public/images/productos/` sí son reales.
 - `public/og-image.png` (1200×630) es la imagen que se ve al compartir el sitio en redes.
 

@@ -16,7 +16,7 @@ export const CATEGORIAS: Categoria[] = [
     h1: 'Repuestos de inyección y sistema de combustible en Pilar',
     metaTitle: 'Repuestos de inyección Toyota en Pilar | RepuestosPilar',
     metaDescription:
-      'Válvulas SCV, sensores de riel, kits de bomba, inyectores y filtros de combustible originales Toyota y Lexus en Pilar. Consultá compatibilidad con tu modelo.',
+      'Válvulas SCV, sensores de riel, kits de bomba, inyectores y filtros de combustible originales Toyota en Pilar. Consultá compatibilidad con tu modelo.',
     resumen: 'Válvulas, sensores de riel, kits de bomba, inyectores y filtros de combustible.',
     intro: [
       'El sistema de inyección es de precisión: una pieza que no corresponde exactamente a tu motor puede afectar el arranque, el consumo o directamente dejarte a pie. Por eso trabajamos con piezas originales, en caja de fábrica.',
@@ -31,14 +31,14 @@ export const CATEGORIAS: Categoria[] = [
   {
     slug: 'sensores',
     nombre: 'Sensores del motor',
-    h1: 'Sensores para autos Toyota y Lexus en Pilar',
-    metaTitle: 'Sensores Toyota y Lexus en Pilar | RepuestosPilar',
+    h1: 'Sensores para autos Toyota en Pilar',
+    metaTitle: 'Sensores Toyota en Pilar | RepuestosPilar',
     metaDescription:
-      'Sensores de oxígeno, de mezcla aire-combustible, de cigüeñal, de turbo y caudalímetros originales Toyota y Lexus en Pilar. Consultá el código de tu pieza.',
+      'Sensores de oxígeno, de mezcla aire-combustible, de cigüeñal, de turbo y caudalímetros originales Toyota en Pilar. Consultá el código de tu pieza.',
     resumen: 'Sensores de oxígeno, mezcla aire-combustible, cigüeñal, turbo y caudal de aire.',
     intro: [
       'Un sensor en mal estado enciende el testigo del tablero y puede hacer que el motor entre en modo seguro, con menos potencia y más consumo. Identificar el sensor correcto por su código evita cambiar piezas de más.',
-      'Trabajamos con sensores originales Toyota y Lexus. Si tenés el código de la pieza o el número de chasis, te confirmamos la referencia exacta.',
+      'Trabajamos con sensores originales Toyota. Si tenés el código de la pieza o el número de chasis, te confirmamos la referencia exacta.',
     ],
     consejos: [
       'Si se encendió el testigo de check engine, anotá o pedí en el taller el código de falla antes de comprar el sensor: acorta la búsqueda.',
@@ -49,10 +49,10 @@ export const CATEGORIAS: Categoria[] = [
   {
     slug: 'encendido',
     nombre: 'Encendido',
-    h1: 'Bujías y bobinas de encendido para Toyota y Lexus en Pilar',
+    h1: 'Bujías y bobinas de encendido para Toyota en Pilar',
     metaTitle: 'Bujías y bobinas de encendido Toyota en Pilar | RepuestosPilar',
     metaDescription:
-      'Bujías de iridio y bobinas de encendido originales Toyota y Lexus en Pilar. Piezas con el código de fábrica confirmado para tu motor.',
+      'Bujías de iridio y bobinas de encendido originales Toyota en Pilar. Piezas con el código de fábrica confirmado para tu motor.',
     resumen: 'Bujías de iridio y bobinas de encendido originales para tu motor.',
     intro: [
       'Las bujías de iridio mantienen una chispa estable durante más kilómetros y ayudan a que el motor arranque bien y consuma lo que corresponde. Las vendemos en juego completo, según la cantidad de cilindros de tu motor.',
@@ -70,7 +70,7 @@ export const CATEGORIAS: Categoria[] = [
     h1: 'Correas de distribución, poleas y bombas de agua en Pilar',
     metaTitle: 'Correa de distribución y bomba de agua en Pilar | RepuestosPilar',
     metaDescription:
-      'Kits de correa de distribución, poleas tensoras, tensores y bombas de agua originales Toyota y Lexus en Pilar. Repuestos para el sistema de correas de tu motor.',
+      'Kits de correa de distribución, poleas tensoras, tensores y bombas de agua originales Toyota en Pilar. Repuestos para el sistema de correas de tu motor.',
     resumen: 'Kits de distribución, poleas tensoras, tensores y bombas de agua.',
     intro: [
       'La correa de distribución marca el ritmo del motor: si se corta o salta, el daño suele ser grande. Respetar el intervalo de cambio que indica el fabricante es la mejor forma de evitar una rotura inesperada.',
@@ -105,9 +105,9 @@ export const PREGUNTAS_FRECUENTES: Pregunta[] = [
       'Sí. Trabajamos con repuestos originales, con la calidad y el ajuste que define el fabricante. No vendemos alternativos.',
   },
   {
-    pregunta: '¿Trabajan solo con Toyota y Lexus?',
+    pregunta: '¿Trabajan solo con Toyota?',
     respuesta:
-      'Nuestro fuerte son los repuestos originales Toyota y Lexus, incluyendo componentes de fabricantes como Denso y Bosch que se usan en estos vehículos. Consultanos por tu marca y modelo.',
+      'Nuestro fuerte son los repuestos originales Toyota, incluyendo componentes de fabricantes como Denso y Bosch que se usan en estos vehículos. Consultanos por tu marca y modelo.',
   },
   {
     pregunta: '¿Hacen envíos a todo el país?',

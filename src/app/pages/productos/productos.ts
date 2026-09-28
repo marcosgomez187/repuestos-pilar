@@ -42,9 +42,9 @@ export class Productos {
   private readonly route = inject(ActivatedRoute);
 
   constructor() {
-    const title = 'Catálogo de repuestos originales Toyota y Lexus | RepuestosPilar';
+    const title = 'Catálogo de repuestos originales Toyota | RepuestosPilar';
     const description =
-      'Catálogo de repuestos originales Toyota y Lexus en Pilar: inyección, sensores, encendido y correas. Filtrá por categoría, marca o código y consultá por WhatsApp.';
+      'Catálogo de repuestos originales Toyota en Pilar: inyección, sensores, encendido y correas. Filtrá por categoría, marca o código y consultá por WhatsApp.';
     inject(SeoService).setPage({
       title,
       description,
