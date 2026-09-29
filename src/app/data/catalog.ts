@@ -105,9 +105,9 @@ export const PREGUNTAS_FRECUENTES: Pregunta[] = [
       'Sí. Trabajamos con repuestos originales, con la calidad y el ajuste que define el fabricante. No vendemos alternativos.',
   },
   {
-    pregunta: '¿Trabajan solo con Toyota?',
+    pregunta: '¿Trabajan con otras marcas además de Toyota?',
     respuesta:
-      'Nuestro fuerte son los repuestos originales Toyota, incluyendo componentes de fabricantes como Denso y Bosch que se usan en estos vehículos. Consultanos por tu marca y modelo.',
+      'Sí, también trabajamos con Volkswagen. Nuestro catálogo publicado hoy es principalmente de repuestos Toyota; si buscás una pieza Volkswagen, escribinos por WhatsApp con marca, modelo y año y te confirmamos disponibilidad.',
   },
   {
     pregunta: '¿Hacen envíos a todo el país?',

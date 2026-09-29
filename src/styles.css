@@ -132,7 +132,8 @@ main:focus { outline: none; }
 .lead { font-size: 1.2rem; color: inherit; opacity: 0.92; max-width: 60ch; }
 .hero-points { list-style: none; padding: 0; margin: 1.6rem 0 0; display: grid; gap: 0.4rem; color: #d3d9e2; }
 .hero-points li::before { content: '✓'; color: var(--amber); font-weight: 800; margin-right: 0.6rem; }
-.hero-media img { border-radius: var(--radius); box-shadow: 0 20px 60px rgb(0 0 0 / 0.45); }
+.hero-media img { border-radius: var(--radius); box-shadow: 0 20px 60px rgb(0 0 0 / 0.45); background: #fff; padding: 1.4rem; width: 100%; }
+.hero-media-label { text-align: center; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #b8c0cc; margin: 0 0 0.7rem; }
 
 @media (max-width: 860px) {
   .hero-grid { grid-template-columns: 1fr; }

@@ -13,7 +13,7 @@ export const SITE = {
   url: 'https://www.repuestospilar.com.ar',
   slogan: 'Repuestos originales en Pilar',
   description:
-    'Repuestos originales Toyota en Pilar: inyección, sensores, encendido y correas. Asesoramiento personalizado, envíos a todo el país y garantía.',
+    'Repuestos originales Toyota y Volkswagen en Pilar: inyección, sensores, encendido y correas. Asesoramiento personalizado, envíos a todo el país y garantía.',
   phone: { display: '+54 9 11 6724-0165', tel: '+5491167240165' },
   whatsapp: '5491167240165',
   email: 'Innovacionenriegos@yahoo.com.ar',
